@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Form</title>
+  <link rel="stylesheet" href="Appointment.css">
+</head>
+
+<body>
+
+<header>
+  <a href="index.html">
+    <h1>LOCAL SERVICES DIRECTORY</h1>
+  </a>
+  <h1>Appointment Form</h1>
+  <p>Fill out the form to schedule an appointment</p>
+</header>
+
+<nav>
+  <ul class="navbar">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="bookings.html">Bookings</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="help.html">Help</a></li>
+  </ul>
+</nav>
+
+<section class="appointment-form">
+  <form id="appointmentForm" action="/submit" method="post" onsubmit="handleClick(event)">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Your Phone:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="service">Select Service:</label>
+    <select id="service" name="service" onchange="updateSubServices()" required>
+      <option value="painter">Painter</option>
+      <option value="plumber">Plumber</option>
+      <option value="carpenter">Carpenter</option>
+      <option value="electrician">Electrician</option>
+      <option value="engineer">Engineer</option>
+      <option value="doctor">Doctor</option>
+    </select>
+
+    <!-- Nested dropdown -->
+    <label for="subService" class="nested-dropdown">Select Sub-Service:</label>
+    <select id="subService" name="subService" class="nested-dropdown">
+    </select>
+
+    <label for="date">Preferred Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="message">Additional Message (optional):</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<footer>
+  <p>Contact us at <a href="mailto:info@example.com">info@example.com</a></p>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>Email: localservicesdirectoryhelp@gmail.com</p>
+      <p>Phone: +91 9058068428</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/prakhar.kumar.161446?mibextid=ZbWKwL" target="_blank">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/in/prakhar-kumar-53186a257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkedin</a></li>
+        <li><a href="https://www.instagram.com/prakhar_kr.__/" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <p>&copy; 2023 Local Services Directory</p>
+  </div>
+</footer>
+
+<script>
+  function updateSubServices() {
+    let serviceDropdown = document.getElementById("service");
+    let subServiceDropdown = document.getElementById("subService");
+
+    // Clear existing options
+    subServiceDropdown.innerHTML = "";
+
+    // Get selected service
+    let selectedService = serviceDropdown.value;
+
+    switch (selectedService) {
+      case "painter":
+        addOption(subServiceDropdown, "Painter1", "House Painters (Residential Painters)");
+        addOption(subServiceDropdown, "Painter2", "COMMERCIAL Painter");
+        addOption(subServiceDropdown, "Painter3", "Industrial Painters");
+        addOption(subServiceDropdown, "Painter4", "Decorative painters");
+        addOption(subServiceDropdown, "Painter5", "Marine Painters");
+        addOption(subServiceDropdown, "Painter6", "Spray Painters");
+        addOption(subServiceDropdown, "Painter7", "Epoxy Painter");
+        addOption(subServiceDropdown, "Painter8", "Wallpaper Hangers");
+        addOption(subServiceDropdown, "Painter9", "Drywall and plaster painters");
+        addOption(subServiceDropdown, "Painter10", "Automotive Painters (Auto Body Painters)");
+        break;
+
+      case "plumber":
+        addOption(subServiceDropdown, "Plumber1", "Residential Plumber");
+        addOption(subServiceDropdown, "Plumber2", "COMMERCIAL Plumber");
+        addOption(subServiceDropdown, "Plumber3", "Service and Repair Plumbers");
+        addOption(subServiceDropdown, "Plumber4", "Pipe Fitters");
+        addOption(subServiceDropdown, "Plumber5", "Water Heater Technicians");
+        addOption(subServiceDropdown, "Plumber6", "Drainage Plumbers");
+        addOption(subServiceDropdown, "Plumber7", "Green Plumbers");
+        addOption(subServiceDropdown, "Plumber8", "Pipeliners");
+        addOption(subServiceDropdown, "Plumber9", "Plumbing Inspectors");
+        break;
+
+      case "electrician":
+        addOption(subServiceDropdown, "Electrician1", "Residential Electrician");
+        addOption(subServiceDropdown, "Electrician2", "Commercial Electricians");
+        addOption(subServiceDropdown, "Electrician3", "Industrial Electricians");
+        addOption(subServiceDropdown, "Electrician4", "Maintenance Electricians");
+        addOption(subServiceDropdown, "Electrician5", "Installation Electricians");
+        addOption(subServiceDropdown, "Electrician6", "Automotive Electricians");
+        addOption(subServiceDropdown, "Electrician7", "Solar Panel Electricians");
+        addOption(subServiceDropdown, "Electrician8", "Wind Turbine Electricians");
+        break;
+
+      case "doctor":
+        addOption(subServiceDropdown, "Doctor1", "Cardiologist");
+        addOption(subServiceDropdown, "Doctor2", "Pediatrics doctor");
+        addOption(subServiceDropdown, "Doctor3", "Gastroenterologist");
+        addOption(subServiceDropdown, "Doctor4", "Dermatologist");
+        addOption(subServiceDropdown, "Doctor5", "Endocrinologist");
+        addOption(subServiceDropdown, "Doctor6", "Nephrologist (Kidney & BP)");
+        addOption(subServiceDropdown, "Doctor7", "Ophthalmologists (Eye Doctors)");
+        addOption(subServiceDropdown, "Doctor8", "Psychiatrists");
+        addOption(subServiceDropdown, "Doctor9", "Urologists");
+        addOption(subServiceDropdown, "Doctor10", "General Physician");
+        addOption(subServiceDropdown, "Doctor11", "Neurologist");
+        break;
+
+      case "engineer":
+        addOption(subServiceDropdown, "Engineer1", "Home Theatre Repairer");
+        addOption(subServiceDropdown, "Engineer2", "Appliances Repairer");
+        addOption(subServiceDropdown, "Engineer3", "HVAC Technicians (Heating, Ventilation, and Air Conditioning)");
+        addOption(subServiceDropdown, "Engineer4", "Home Automation Technicians");
+        addOption(subServiceDropdown, "Engineer5", "Networking Engineers");
+        addOption(subServiceDropdown, "Engineer6", "TV and Audio System Installers");
+        addOption(subServiceDropdown, "Engineer7", "Computer Technicians");
+        addOption(subServiceDropdown, "Engineer8", "Security System Installers");
+        addOption(subServiceDropdown, "Engineer9", "Lighting Designers");
+        addOption(subServiceDropdown, "Engineer10", "Smart Home Consultant");
+        break;
+
+      case "carpenter":
+        addOption(subServiceDropdown, "Carpenter1", "Rough Carpenter");
+        addOption(subServiceDropdown, "Carpenter2", "Finish Carpenter");
+        addOption(subServiceDropdown, "Carpenter3", "Cabinet Maker");
+        addOption(subServiceDropdown, "Carpenter4", "Trim Carpenter");
+        addOption(subServiceDropdown, "Carpenter5", "Shipwright Carpenters");
+        addOption(subServiceDropdown, "Carpenter6", "Roof Carpenters");
+        addOption(subServiceDropdown, "Carpenter7", "Bench Carpenter");
+        addOption(subServiceDropdown, "Carpenter8", "Restoration Framer");
+        addOption(subServiceDropdown, "Carpenter9", "Frame Designers");
+        addOption(subServiceDropdown, "Carpenter10", "Green Carpenter");
+        break;
+    }
+  }
+
+  function addOption(selectElement, value, text) {
+    let option = document.createElement("option");
+    option.value = value;
+    option.text = text;
+    selectElement.add(option);
+  }
+
+  function handleClick(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let date = document.getElementById("date").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    // Validation
+    if (name === "" || email === "" || phone === "" || date === "") {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Invalid email format.");
+      return;
+    }
+
+    // Log the form data to console
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Phone:", phone);
+    console.log("Selected Service:", document.getElementById("service").value);
+    console.log("Selected Sub-Service:", document.getElementById("subService").value);
+    console.log("Preferred Date:", date);
+    console.log("Additional Message:", message);
+
+    alert("Form data logged.");
+  }
+</script>
+
+</body>
+
+</html>

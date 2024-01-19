@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Services Directory - Get Everything Done with Local Experts</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      let searchBar = document.querySelector('.search-bar');
+      let bookNowButton = searchBar.querySelector('button');
+      let inputFields = searchBar.querySelectorAll('input');
+
+      // Add a click event listener to the "Book Now" button
+      bookNowButton.addEventListener('click', function () {
+        // Get the values entered the input fields
+        let fixingInputValue = inputFields[0].value;
+        let whereInputValue = inputFields[1].value;
+
+        // Display the values in the console
+        console.log('Booking request:\nWhat needs fixing:', fixingInputValue, '\nWhere:', whereInputValue);
+      });
+    });
+    </script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="carousel">
+  </div>
+  <a href="index.html"> <h1>LOCAL SERVICES DIRECTORY</h1></a>
+  <h1>Get Everything Done with Local Experts</h1>
+  <p>Find reliable and trusted professionals for all your home needs. Book instantly, compare quotes, and get the job done right.</p>
+  <nav>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="bookings.html">Bookings</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  </nav>
+
+  <div class="search-bar">
+    <input type="text" placeholder="What needs fixing?" required>
+    <input type="text" placeholder="Where?" required>
+    <button type="submit">Book Now</button>
+    <a href="#">Explore Services</a>
+  </div>
+</section>
+
+<section class="featured-services">
+  <h2>Top Services in Your Area</h2>
+  <div class="grid">
+  </div>
+  <a href="services.html">View All Services</a>
+</section>
+
+<section class="why-choose-us">
+  <h2>Why Choose Local Services Directory?</h2>
+  <div class="columns">
+    <div class="column">
+      <h3>Trusted Professionals</h3>
+      <p>We vet and background check all service providers for your peace of mind.</p>
+      <img src="https://www.shutterstock.com/image-photo/male-plumber-diagnoses-pipes-water-260nw-2358150009.jpg" alt="Trusted Professionals">
+      <p class="testimonial">
+        "I was nervous about finding a reliable plumber, but Local Services Directory made it easy. I found a highly-rated plumber who fixed my leak quickly and efficiently." - Vishal Sharma, Customer
+      </p>
+    </div>
+    <div class="column">
+      <h3>Transparent Pricing</h3>
+      <p>Get upfront quotes and no hidden fees so you know exactly what you're paying for.</p>
+      <img src="https://www.shutterstock.com/image-photo/male-worker-repairing-refrigerator-screwdriver-260nw-1666788403.jpg" alt="Transparent Pricing">
+      <p class="testimonial">
+        "I was tired of surprise charges from other companies. Local Services Directory was a breath of fresh air! I knew the cost before I booked, and there were no hidden fees." - Ashish Sharma, Customer
+      </p>
+    </div>
+    <div class="column">
+      <h3>Guaranteed Satisfaction</h3>
+      <p>We stand behind our work and offer a money-back guarantee if you're not happy.</p>
+      <img src="https://media.istockphoto.com/id/1049775258/photo/smiling-handsome-electrician-repairing-electrical-box-with-pliers-in-corridor-and-looking-at.jpg?s=612x612&w=0&k=20&c=stdWozouV2XsrHk2xXD3C31nT90BG7ydZvcpAn1Fx7I=" alt="Guaranteed Satisfaction">
+      <p class="testimonial">
+        "My electrician didn't quite get the job done right the first time. I contacted Local Services Directory, and they sent someone back to fix it free of charge. I'm a customer for life!" - Pravesh Saini, Customer
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>What our customers are saying</h2>
+  <div class="carousel">
+  </div>
+</section>
+
+<section class="call-to-action">
+  <a href="#">Get Started Today!</a>
+  <a href="services.html">Learn More About Our Services</a>
+</section>
+
+<section class="social-proof">
+  <p>Over 10,000 happy customers and 5,000 projects completed.</p>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>Email: localservicesdirectoryhelp@gmail.com</p>
+      <p>Phone: +91 9058068428</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <!-- Add more quick links as needed -->
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="#" target="_blank">Facebook</a></li>
+        <li><a href="#" target="_blank">Twitter</a></li>
+        <li><a href="#" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

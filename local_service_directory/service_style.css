@@ -1,0 +1,124 @@
+/* Reset some default margin and padding */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color to the body */
+body {
+    background-color: #fafaf5; /* Light beige */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+/* Style the header */
+header {
+    background-color: #d2b48c; /* Tan */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Navigation bar styles */
+nav {
+    background-color: #d2b48c; /* Tan */
+    text-align: center;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.navbar li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Style the main services section */
+.services {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+/* Style individual service items */
+.service {
+    background-color: #fff8e1; /* Light yellow beige */
+    border: 1px solid #e0d8c7; /* Lighter beige border */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Add hover effect for service items */
+.service:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(210, 180, 140, 0.5); /* Slightly transparent tan shadow */
+}
+
+/* Style links within service items */
+.service a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #a1887f; /* Brownish beige */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Add hover effect for links */
+.service a:hover {
+    background-color: #8d6e63; /* Darker brownish beige on hover */
+}
+
+/* Style the footer */
+footer {
+    background-color: #8d6e63; /* Midnight blue */
+    color: #ecf0f1; /* Light grayish silver */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.footer-section h3 {
+    color: #fff;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ecf0f1; /* Light grayish silver */
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #a1887f; /* Brownish beige */
+}
